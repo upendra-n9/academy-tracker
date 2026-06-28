@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SessionTime {
+  MORNING
+  EVENING
+}
+
+enum AttendanceStatus {
+  PRESENT_REGULAR
+  PRESENT_COMPLEMENTARY
+  ABSENT
+}
+
+model Coach {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  name      String
+  email     String   @unique
+  ageGroup  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions Session[]
+  players  Player[]
+}
+
+model Player {
+  id                  String   @id @default(uuid())
+  name                String
+  email               String?
+  ageGroup            String
+  bookedSessions      Int      @default(12)
+  maxComplementary    Int      @default(3)
+  coachId             String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  coach       Coach        @relation(fields: [coachId], references: [id])
+  attendances Attendance[]
+}
+
+model Session {
+  id        String      @id @default(uuid())
+  date      DateTime    @db.Date
+  time      SessionTime
+  ageGroup  String
+  coachId   String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  coach       Coach        @relation(fields: [coachId], references: [id])
+  attendances Attendance[]
+
+  @@unique([date, time, ageGroup])
+}
+
+model Attendance {
+  id        String           @id @default(uuid())
+  sessionId String
+  playerId  String
+  status    AttendanceStatus @default(ABSENT)
+  photoUrl  String?
+  notes     String?
+  markedAt  DateTime?
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  session Session @relation(fields: [sessionId], references: [id])
+  player  Player  @relation(fields: [playerId], references: [id])
+
+  @@unique([sessionId, playerId])
+}
