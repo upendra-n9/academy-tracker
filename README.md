@@ -1,10 +1,19 @@
-# ⚽ Academy Tracker — Football Club Attendance System
+#  Academy Tracker — Player Attendance Tracker
 
 A full-stack attendance tracking system for a football club academy. Coaches log in and track player attendance across morning/evening sessions, capture group photos, monitor session stats, and export reports.
 
 ---
+## Features
 
-## 🚀 Quick Start (Docker)
+- Coach authentication using JWT
+- Attendance tracking (Regular, Complimentary, Absent)
+- Player attendance history
+- Session statistics dashboard
+- CSV export
+- Photo upload during attendance
+- Docker support
+
+##  Quick Start (Docker)
 
 The entire project runs with a single command:
 
@@ -18,7 +27,7 @@ Then open:
 
 ---
 
-## 🔑 Demo Login Credentials
+##  Demo Login Credentials
 
 | Username | Password | Group |
 |---|---|---|
@@ -27,7 +36,7 @@ Then open:
 
 ---
 
-## 🏗️ Architecture
+## Project Structure
 
 ```
 academy-tracker/
@@ -62,7 +71,7 @@ academy-tracker/
 
 ---
 
-## ✅ Features Implemented
+## Features Implemented
 
 ### Core
 - [x] Coach login with JWT auth
@@ -83,7 +92,7 @@ academy-tracker/
 
 ---
 
-## 💻 Local Development (without Docker)
+##  Local Development (without Docker)
 
 ### Prerequisites
 - Node.js 20+
@@ -115,7 +124,7 @@ npm run dev
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
 All protected routes require: `Authorization: Bearer <token>`
 
@@ -151,7 +160,7 @@ All protected routes require: `Authorization: Bearer <token>`
 
 ---
 
-## 🗄️ Data Model
+##  Data Model
 
 ```
 Coach (1) ──── (N) Player
@@ -166,7 +175,7 @@ Attendance fields:
 
 ---
 
-## 🌱 Seed Data
+##  Seed Data
 
 The seed creates:
 - 2 coaches (U12 and U16)
@@ -176,7 +185,7 @@ The seed creates:
 
 ---
 
-## 🐳 Docker Notes
+## Docker Notes
 
 - Backend waits for Postgres healthcheck before starting
 - Migrations run automatically on container start
