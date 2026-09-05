@@ -52,3 +52,4 @@ export interface Attendance {
   player?: Player;
   session?: Session;
 }
+

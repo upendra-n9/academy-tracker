@@ -11,3 +11,4 @@ router.post("/bulk", bulkMarkAttendance);
 router.post("/:attendanceId/photo", uploadPhoto);
 
 export default router;
+

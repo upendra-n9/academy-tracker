@@ -64,3 +64,4 @@ export const me = async (req: Request & { coach?: { id: string } }, res: Respons
     res.status(500).json({ error: "Internal server error" });
   }
 };
+

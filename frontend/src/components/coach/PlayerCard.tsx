@@ -96,3 +96,4 @@ export function PlayerCard({ player, onClick }: Props) {
     </button>
   );
 }
+

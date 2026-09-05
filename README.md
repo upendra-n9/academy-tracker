@@ -192,3 +192,4 @@ The seed creates:
 - Seed runs once on first boot (fails silently on re-runs)
 - Uploads persisted via Docker volume
 - Frontend served as Next.js standalone build
+

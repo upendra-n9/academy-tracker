@@ -23,3 +23,4 @@ COPY --from=base /app/public ./public
 EXPOSE 3000
 
 CMD ["node", "server.js"]
+

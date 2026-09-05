@@ -31,3 +31,4 @@ export const authenticate = (req: AuthRequest, res: Response, next: NextFunction
     res.status(401).json({ error: "Unauthorized: Invalid token" });
   }
 };
+

@@ -84,3 +84,4 @@ async function ensureTodaySessions(coachId: string, ageGroup: string, date: Date
     }
   }
 }
+

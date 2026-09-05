@@ -10,3 +10,4 @@ router.get("/today", getTodaySessions);
 router.get("/:id", getSessionById);
 
 export default router;
+

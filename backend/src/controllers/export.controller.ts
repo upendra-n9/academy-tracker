@@ -63,3 +63,4 @@ export const exportAttendanceCSV = async (req: AuthRequest, res: Response): Prom
     res.status(500).json({ error: "Internal server error" });
   }
 };
+

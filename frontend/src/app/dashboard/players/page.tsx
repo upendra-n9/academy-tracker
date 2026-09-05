@@ -249,3 +249,4 @@ function PlayerDetailModal({ player, onClose }: { player: Player; onClose: () =>
     </div>
   );
 }
+

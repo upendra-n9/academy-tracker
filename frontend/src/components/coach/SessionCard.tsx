@@ -255,3 +255,4 @@ export function SessionCard({ session, onUpdate }: Props) {
     </div>
   );
 }
+

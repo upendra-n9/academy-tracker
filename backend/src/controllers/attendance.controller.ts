@@ -171,3 +171,4 @@ export const bulkMarkAttendance = async (req: AuthRequest, res: Response): Promi
     res.status(500).json({ error: "Internal server error" });
   }
 };
+

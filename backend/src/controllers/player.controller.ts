@@ -98,3 +98,4 @@ export const getPlayerById = async (req: AuthRequest, res: Response): Promise<vo
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
